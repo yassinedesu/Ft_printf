@@ -6,12 +6,11 @@
 /*   By: yael-kha <yael-kha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 18:35:33 by yael-kha          #+#    #+#             */
-/*   Updated: 2025/11/17 20:19:07 by yael-kha         ###   ########.fr       */
+/*   Updated: 2025/11/20 07:24:45 by yael-kha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <limits.h>
-#include <unistd.h>
+#include "ft_printf.h"
 
 static int	handling_condition(int c)
 {
@@ -30,6 +29,7 @@ static int	handling_condition(int c)
 		write(1, "0", 1);
 		return (1);
 	}
+	return (0);
 }
 
 int	ft_print_digit(int c)

@@ -1,28 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_str.c                                     :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yael-kha <yael-kha@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: yael-kha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/17 18:02:08 by yael-kha          #+#    #+#             */
-/*   Updated: 2025/11/20 07:26:21 by yael-kha         ###   ########.fr       */
+/*   Created: 2025/11/20 20:42:15 by yael-kha          #+#    #+#             */
+/*   Updated: 2025/11/20 20:53:03 by yael-kha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h" 
+#include "ft_printf.h"
 
-int	ft_print_str(char *s)
+int	main(void)
 {
-	int	i;
-
-	i = 0;
-	if (!s || s[i] == '\0')
-		return (0);
-	while (s[i])
-	{
-		write(1, &s[i], 1);
-		i++;
-	}
-	return (i);
+	ft_printf("I wanna go at %dH00%s to sleep well and wake up normally %\n %", 9, "PM");
 }
