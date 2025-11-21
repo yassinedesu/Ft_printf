@@ -6,7 +6,7 @@
 /*   By: yael-kha <yael-kha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 19:16:54 by yael-kha          #+#    #+#             */
-/*   Updated: 2025/11/20 20:56:35 by yael-kha         ###   ########.fr       */
+/*   Updated: 2025/11/21 22:15:55 by yael-kha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,11 @@ int	ft_printf(const char *format, ...)
 	count = 0;
 	while (*format)
 	{
+		if (*format == '%' && *(format + 1) == '\0')
+		{
+			count += write(1, "%", 1);
+			return (count);
+		}
 		if (*format == '%')
 		{
 			format++;
