@@ -6,7 +6,7 @@
 /*   By: yael-kha <yael-kha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 19:16:54 by yael-kha          #+#    #+#             */
-/*   Updated: 2025/11/21 22:15:55 by yael-kha         ###   ########.fr       */
+/*   Updated: 2025/11/22 10:27:54 by yael-kha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static int	handling_prints(char specifier, va_list args)
 	else if (specifier == 'c')
 		return (ft_print_char(va_arg(args, int)));
 	else if (specifier == 's')
-		return (ft_print_str(va_arg(args, char*)));
+		return (ft_print_str(va_arg(args, char *)));
 	else if (specifier == 'x')
 		return (ft_print_hex(va_arg(args, unsigned int), "0123456789abcdef"));
 	else if (specifier == 'X')
@@ -35,18 +35,17 @@ static int	handling_prints(char specifier, va_list args)
 
 int	ft_printf(const char *format, ...)
 {
-	int	count;
+	int		count;
 	va_list	args;
-	va_start(args, format);
 
+	va_start(args, format);
+	if (!format)
+		return (-1);
 	count = 0;
 	while (*format)
 	{
 		if (*format == '%' && *(format + 1) == '\0')
-		{
-			count += write(1, "%", 1);
-			return (count);
-		}
+			break ;
 		if (*format == '%')
 		{
 			format++;

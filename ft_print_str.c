@@ -6,7 +6,7 @@
 /*   By: yael-kha <yael-kha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 18:02:08 by yael-kha          #+#    #+#             */
-/*   Updated: 2025/11/20 07:26:21 by yael-kha         ###   ########.fr       */
+/*   Updated: 2025/11/22 09:40:01 by yael-kha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ int	ft_print_str(char *s)
 	int	i;
 
 	i = 0;
-	if (!s || s[i] == '\0')
-		return (0);
+	if (!s)
+		return (write(1, "(null)", 6));
 	while (s[i])
 	{
 		write(1, &s[i], 1);

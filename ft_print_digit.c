@@ -6,7 +6,7 @@
 /*   By: yael-kha <yael-kha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 18:35:33 by yael-kha          #+#    #+#             */
-/*   Updated: 2025/11/20 07:24:45 by yael-kha         ###   ########.fr       */
+/*   Updated: 2025/11/22 09:45:31 by yael-kha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,11 @@ int	ft_print_digit(int c)
 	if (c < 0)
 	{
 		c *= -1;
-		write(1, "-", 1);
+		i += write(1, "-", 1);
 	}
 	if (c >= 10)
 		i += ft_print_digit(c / 10);
 	pr = (c % 10) + '0';
-	write(1, &pr, 1);
-	return (i + 1);
+	i += write(1, &pr, 1);
+	return (i);
 }
